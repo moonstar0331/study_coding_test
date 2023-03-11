@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.StringTokenizer;
 
 // 백준 15650 N과 M (2)
-public class BruteForce4 {
+public class BruteForce04 {
 
     static StringBuilder sb = new StringBuilder();
 
