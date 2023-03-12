@@ -1,4 +1,4 @@
-package fastcampus.part5.ch02_algorithm;
+package fastcampus.part5.ch02_algorithm.bruteforce;
 
 import java.io.*;
 import java.util.StringTokenizer;

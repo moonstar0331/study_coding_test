@@ -1,10 +1,10 @@
-package fastcampus.part5.ch02_algorithm;
+package fastcampus.part5.ch02_algorithm.bruteforce;
 
 import java.io.*;
 import java.util.StringTokenizer;
 
-// 백준 15651 N과 M (3)
-public class BruteForce01 {
+// 백준 15652 - N과 M (4)
+public class BruteForce03 {
 
     static StringBuilder sb = new StringBuilder();
 
@@ -22,20 +22,20 @@ public class BruteForce01 {
     // 만약 M 개를 전부 고름 => 조건에 맞는 탐색을 한 가지 성공한 것!
     // 아직 M 개를 고르지 않음 => k 번째부터 M번째 원소를 조건에 맞게 고르는 모든 방법을 시도한다.
     static void rec_func(int k) {
-        if(k == M+1) { // 다 골랐다!
+        if(k == M+1) { // 1 ~ M 번째를 전부 다 골랐다!
             // selected[1...M] 배열이 새롭게 탐색된 결과
             for(int i=1; i<=M; i++) {
                 sb.append(selected[i]).append(' ');
             }
             sb.append('\n');
         } else {
-            // 1~N 까지를 k 번 원소로 한 번씩 정하고,
-            // 매번 k+1 번부터 M 번 원소로 재귀호출 해주기
-            for(int cand=1; cand<=N; cand++) {
+            int start = selected[k-1];
+            if(start == 0) start = 1;
+            for(int cand=start; cand<=N; cand++) {
+                // k 번째에 cand가 올 수 있으면
                 selected[k] = cand;
-                // k+1 번 ~ M 번을 모두 탐색하는 일을 해야 하는 상황
                 rec_func(k+1);
-                selected[k]=0;
+                selected[k] = 0;
             }
         }
     }
