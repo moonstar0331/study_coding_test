@@ -3,7 +3,7 @@ package fastcampus.part5.ch02_algorithm.mockexam01;
 import java.io.*;
 import java.util.*;
 
-// 백준 20181 - 꿈틀꿈틀 호석 애벌레
+// 백준 20167 - 꿈틀꿈틀 호석 애벌레
 public class MockExam04 {
 
     static int n, K, D;
