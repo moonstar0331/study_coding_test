@@ -3,6 +3,7 @@ package programmers.Lv1;
 import java.util.*;
 import java.util.stream.*;
 
+// 숫자 짝꿍
 public class NumberMates {
     public String solution(String X, String Y) {
         String answer = "";
