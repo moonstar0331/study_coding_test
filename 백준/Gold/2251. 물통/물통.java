@@ -1,4 +1,5 @@
 import java.io.*;
+import java.lang.reflect.Array;
 import java.util.*;
 
 // 물통의 현재 상태와 물을 붓는 행위를 관리하는 구조체
@@ -8,7 +9,7 @@ class State{
         X = new int[3];
         for (int i=0;i<3;i++) X[i] = _X[i];
     }
-
+    
     State move(int from,int to,int[] Limit){
         // from 물통에서 to 물통으로 물을 옮긴다.
         int[] nX = new int[]{X[0], X[1], X[2]};
@@ -23,9 +24,7 @@ class State{
     }
 };
 
-// 백준 2251 - 물통
 public class Main {
-
     static FastReader scan = new FastReader();
     static StringBuilder sb = new StringBuilder();
 
@@ -40,7 +39,7 @@ public class Main {
         possible = new boolean[205];
     }
 
-    // 물통 탐색 시작
+    // 물통 탐색 시작~
     static void bfs(int x1, int x2, int x3) {
         Queue<State> Q = new LinkedList<>();
         visit[x1][x2][x3] = true;
@@ -78,6 +77,7 @@ public class Main {
         input();
         pro();
     }
+
 
     static class FastReader {
         BufferedReader br;
